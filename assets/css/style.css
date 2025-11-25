@@ -161,14 +161,7 @@ button:active {
    THEME TOGGLE (Centered above calculator)
 ---------------------------------------------------- */
 
-.theme-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-  position: absolute;
-  top: 20px;   
-}
+
 
 /* Theme Toggle — TOP LEFT CORNER */
 .theme-toggle {
