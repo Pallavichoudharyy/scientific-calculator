@@ -1,1 +1,215 @@
-gghghh
+/* ----------------------------------------------------
+   GLOBAL THEME
+---------------------------------------------------- */
+:root {
+  --bg: #0d0d0d;
+  --card: #141414;
+  --muted: #d4d4d4;
+  --white: #ffffff;
+
+  --number-bg: #1f1f1f;
+  --number-hover: #2a2a2a;
+
+  --op-bg: #ff9500;
+  --op-hover: #e68400;
+
+  --fn-bg: #4b7cff;
+  --fn-hover: #3766e0;
+
+  --clear-bg: #ff3b30;
+  --clear-hover: #d32d26;
+
+  --eq-bg: #34c759;
+  --eq-hover: #29a84c;
+
+  --shadow: rgba(0, 0, 0, 0.45);
+  --glass: rgba(255,255,255,0.05);
+}
+
+/* ----------------------------------------------------
+   BASE LAYOUT
+---------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* ----------------------------------------------------
+   CALCULATOR CONTAINER (Glassmorphism)
+---------------------------------------------------- */
+.calculator {
+  width: 380px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+/* ----------------------------------------------------
+   DISPLAY AREA
+---------------------------------------------------- */
+#subdisplay {
+  min-height: 20px;
+  text-align: right;
+  font-size: 13px;
+  color: #8b8b8b;
+  margin-bottom: 6px;
+}
+
+#display {
+  width: 100%;
+  height: 70px;
+  background: var(--card);
+  border-radius: 12px;
+  border: none;
+  padding: 14px;
+  font-size: 30px;
+  color: var(--white);
+  text-align: right;
+  margin-bottom: 18px;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.6);
+}
+
+/* ----------------------------------------------------
+   KEYPAD GRID
+---------------------------------------------------- */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* ----------------------------------------------------
+   BUTTON STYLING
+---------------------------------------------------- */
+button {
+  height: 62px;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--white);
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* ----------------------------------------------------
+   BUTTON TYPES
+---------------------------------------------------- */
+.number {
+  background: var(--number-bg);
+}
+.number:hover {
+  background: var(--number-hover);
+}
+
+.operator {
+  background: var(--op-bg);
+}
+.operator:hover {
+  background: var(--op-hover);
+}
+
+.fn {
+  background: var(--fn-bg);
+}
+.fn:hover {
+  background: var(--fn-hover);
+}
+
+.clear {
+  background: var(--clear-bg);
+}
+.clear:hover {
+  background: var(--clear-hover);
+}
+
+.equal {
+  background: var(--eq-bg);
+  grid-column: span 2;
+}
+.equal:hover {
+  background: var(--eq-hover);
+}
+
+.wide {
+  grid-column: span 2;
+}
+/* ----------------------------------------------------
+   THEME TOGGLE (Centered above calculator)
+---------------------------------------------------- */
+
+.theme-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  position: absolute;
+  top: 20px;   
+}
+
+.theme-toggle {
+  background: var(--number-bg);
+  color: var(--white);
+  padding: 8px 18px;
+  font-size: 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.theme-toggle:hover {
+  background: var(--number-hover);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+
+/* ----------------------------------------------------
+   RESPONSIVE DESIGN (For Phones)
+---------------------------------------------------- */
+@media (max-width: 450px) {
+
+  .calculator {
+    width: 100%;
+    padding: 18px;
+  }
+
+  #display {
+    height: 60px;
+    font-size: 26px;
+  }
+
+  button {
+    height: 55px;
+    font-size: 18px;
+  }
+}
+
