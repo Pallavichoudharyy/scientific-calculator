@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scientific Calculator — Dark/Light Mode</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Toggle button OUTSIDE calculator -->
+  <button class="theme-toggle" onclick="toggleTheme()">☀️ / 🌙</button>
+
+  <div class="wrap">
+    <div class="calculator">
+
+      <div id="subdisplay"></div>
+      <input id="display" type="text" disabled>
+
+      <div class="buttons">
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <button class="fn" onclick="backspace()">DEL</button>
+        <button class="fn" onclick="press('(')">(</button>
+        <button class="fn" onclick="press(')')">)</button>
+
+        <button class="fn" onclick="press('Math.sin(')">sin</button>
+        <button class="fn" onclick="press('Math.cos(')">cos</button>
+        <button class="fn" onclick="press('Math.tan(')">tan</button>
+        <button class="operator" onclick="press('/')">÷</button>
+
+        <button class="fn" onclick="press('Math.sqrt(')">√</button>
+        <button class="fn" onclick="press('Math.log10(')">log</button>
+        <button class="fn" onclick="press('Math.PI')">π</button>
+        <button class="operator" onclick="press('*')">×</button>
+
+        <button class="number" onclick="press('7')">7</button>
+        <button class="number" onclick="press('8')">8</button>
+        <button class="number" onclick="press('9')">9</button>
+        <button class="operator" onclick="press('-')">−</button>
+
+        <button class="number" onclick="press('4')">4</button>
+        <button class="number" onclick="press('5')">5</button>
+        <button class="number" onclick="press('6')">6</button>
+        <button class="operator" onclick="press('+')">+</button>
+
+        <button class="number" onclick="press('1')">1</button>
+        <button class="number" onclick="press('2')">2</button>
+        <button class="number" onclick="press('3')">3</button>
+        <button class="fn" onclick="press('%')">%</button>
+
+        <button class="number wide" onclick="press('0')" style="text-align:left;padding-left:20px;">0</button>
+        <button class="number" onclick="press('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>
